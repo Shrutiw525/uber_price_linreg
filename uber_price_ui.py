@@ -4,7 +4,7 @@ st.title("💰Uber Price Prediction🚗")
 #upload dataset
 df=pd.read_csv("uber_price.csv")
 #input from user
-kilometers=st.number_input("Enter the distance in kilometers",min_value=0.5)
+kilometers=st.number_input("Enter the distance in kilometers",min_value=1,value=0.5)
 passengers=st.number_input("Enter the number of passengers",min_value=1,max_value=10)
 #finding the price
 if st.button("Predict Price"):
@@ -23,5 +23,6 @@ if st.button("Predict Price"):
     if passengers>1:
         split_price=price[0]/passengers
         st.info(f"The price per passenger is: ₹{split_price:.2f}")
+
 
 
